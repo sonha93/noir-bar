@@ -1,0 +1,218 @@
+
+noir bar là ý nghĩa giề
+NOIR BAR có nghĩa là Quán bar đen huyền bí.
+
+NOIR (tiếng Pháp): màu đen, phong cách tối, bí ẩn, sang trọng.
+
+BAR: quán bar.
+
+Tên này gợi cảm giác bar cao cấp với tông đen – vàng, ánh đèn lung linh, DJ và không gian về đêm.
+
+Nếu muốn tên nghe hiện đại hơn, có thể dùng NOIR NIGHTCLUB, LUXE BAR hoặc MIDNIGHT CLUB.
+
+tạo tên miền trong github đoạn nào ta
+Trong GitHub, tên miền miễn phí được thiết lập ở phần Settings → Pages của repository nhé.
+
+Nếu repository của mày tên noir-bar, GitHub Pages sẽ tự tạo địa chỉ dạng:
+
+https://ten-tai-khoan.github.io/noir-bar/
+
+Mày đang có 2 loại địa chỉ:
+
+1. Tên miền miễn phí của GitHub
+
+Vào repository noir-bar.
+
+Chọn Settings.
+
+Chọn Pages.
+
+Chọn Deploy from a branch.
+
+Chọn main → / (root) → Save.
+
+Sau khi xuất bản, GitHub cấp link miễn phí dạng username.github.io/noir-bar. 
+
+GitHub Docs
++1
+
+2. Tên miền riêng như noirbar.com hoặc noirbar.vn: phải mua tên miền, sau đó nhập vào ô Custom domain trong Settings → Pages và cấu hình DNS.
+
+Mở GitHub
+Tao khuyên: Ban đầu dùng tên miền miễn phí, chưa cần tốn tiền mua domain.
+
+nhập noir-bar vào đoạn nào trong github
+Mày nhập noir-bar ở bước tạo repository, không phải trong Settings → Pages.
+
+Làm như sau:
+
+Mở GitHub.
+
+Bấm dấu + góc trên bên phải.
+
+Chọn New repository.
+
+Tại ô Repository name, nhập noir-bar.
+
+Chọn Public.
+
+Bấm Create repository.
+
+Steps For Configuring Git 📥📤 With Details
+
+Tạo xong gửi tao đường link repository đó. Tao hướng dẫn bước tiếp theo để chạy website.
+
+Tệp đính kèm của người dùng
+cặc
+À, đúng rồi! Mày đã tạo repository thành công rồi. Đã tạo noir-bar
+
+Trong ảnh, ngay giữa màn hình có dòng:
+
+Get started by creating a new file or uploading an existing file.
+
+Giờ làm tiếp:
+
+Bấm uploading an existing file (chữ màu xanh).
+
+Mở trang tải tệp lên.
+
+Nhưng khoan tải file cũ lên nhé. Website cần có file index.html để GitHub Pages chạy được.
+
+Tao sẽ chuẩn bị bộ mã nguồn website NOIR BAR đúng chuẩn máy tính và điện thoại để mày đưa lên repository này.
+
+tạo 1 index.html đi cu
+
+nhanh
+
+from pathlib import Path
+
+html = r'''<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>NOIR BAR — The Night Is Yours</title>
+<style>
+:root{--gold:#d6b36a;--gold2:#f1d89b;--bg:#090909;--panel:#141414;--muted:#9b958a;--line:#2b2924}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#30251a 0,#111 38%,#080808 75%);color:#f5f0e6;font-family:Inter,Arial,sans-serif;min-height:100vh}
+header{height:76px;padding:0 clamp(16px,4vw,56px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff18;background:#090909d9;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.brand{font-family:Georgia,serif;font-size:27px;letter-spacing:5px;color:var(--gold2)}.brand small{display:block;font:9px Arial;letter-spacing:4px;color:#aaa;text-align:center;margin-top:3px}
+nav{display:flex;gap:25px}nav a{color:#c9c2b5;text-decoration:none;font-size:13px}nav a:hover{color:var(--gold2)}
+.status{font-size:11px;letter-spacing:1px;color:#b7d6a3}.status i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#8fca72;margin-right:7px;box-shadow:0 0 10px #8fca72}
+main{max-width:1280px;margin:auto;padding:34px clamp(14px,3vw,36px) 70px}
+.hero{text-align:center;padding:32px 0 28px}.eyebrow{font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase}.hero h1{font:clamp(34px,6vw,68px) Georgia,serif;font-weight:400;letter-spacing:7px;margin:13px 0 9px}.hero p{color:#a9a194;font-size:13px;letter-spacing:1px;margin:0}
+.grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.8fr);gap:20px;align-items:start}
+.panel{background:linear-gradient(145deg,#171614,#101010);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 18px 50px #0008}.panel-head{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.panel-head h2{font:19px Georgia,serif;font-weight:400;margin:0;letter-spacing:1px}.sub{font-size:10px;color:var(--muted);letter-spacing:1px}
+.floor-wrap{padding:18px;background:#0b0b0b}.floor{position:relative;min-height:490px;border:1px solid #5e4a2b;border-radius:9px;background:linear-gradient(135deg,#191714,#111 60%,#1b1711);overflow:hidden;padding:18px}
+.floor:before{content:"";position:absolute;inset:10px;border:1px dashed #5b4b31;pointer-events:none;border-radius:5px}
+.zone{position:absolute;border:1px solid #80663b;background:#211d16;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;color:#e5c987;font:14px Georgia,serif;letter-spacing:1px;box-shadow:inset 0 0 25px #0008}
+.stage{top:7%;left:27%;width:46%;height:17%;background:linear-gradient(120deg,#342719,#19140f);border-color:#b28b4d;flex-direction:column;gap:6px}.stage strong{font-size:18px;letter-spacing:4px}.stage span,.zone small{font:9px Arial;letter-spacing:2px;color:#b8a47d}
+.bar{top:31%;left:5%;width:90%;height:12%;border-radius:40px;background:#282116}
+.vip{top:51%;left:5%;width:27%;height:20%;}.dance{top:49%;left:37%;width:26%;height:24%;border:1px dashed #b08b4b;background:#261e13}.lounge{top:51%;right:5%;width:27%;height:20%}
+.entry{bottom:5%;left:38%;width:24%;height:10%;border-color:#4f6740;color:#b8d39b}
+.seat{position:absolute;width:13px;height:13px;border-radius:50%;background:#d8ba78;box-shadow:0 0 13px #d8ba78;z-index:2}.s1{left:15%;top:58%}.s2{left:22%;top:64%}.s3{right:17%;top:57%}.s4{right:24%;top:66%}.s5{left:48%;top:57%}.s6{left:56%;top:66%}
+.legend{display:flex;gap:17px;flex-wrap:wrap;padding:13px 18px;color:#aaa18f;font-size:10px}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:6px}
+.side{display:grid;gap:20px}.menu-list{padding:5px 18px 15px}.drink{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #ffffff12}.drink:last-child{border:0}.drink b{font:16px Georgia,serif;font-weight:400}.drink small{display:block;color:#8f887d;font-size:10px;margin-top:5px}.price{color:var(--gold2);white-space:nowrap;font-size:13px}
+.action{border:1px solid #947644;color:#e8d4a8;background:linear-gradient(120deg,#302516,#17130e);padding:11px 15px;border-radius:7px;cursor:pointer;font-size:11px;letter-spacing:1px}.action:hover{background:#48371f}.menu-foot{padding:0 18px 18px}
+.chat{padding:15px 17px}.messages{height:150px;overflow:auto;display:flex;flex-direction:column;gap:10px;margin-bottom:12px}.msg{font-size:12px;color:#c7c0b4;line-height:1.45}.msg b{color:var(--gold);font-weight:500}.chat-form{display:flex;gap:7px}.chat-form input{min-width:0;flex:1;background:#090909;border:1px solid #37332b;color:white;border-radius:6px;padding:10px;font-size:12px;outline:none}.chat-form input:focus{border-color:var(--gold)}
+footer{text-align:center;color:#6f695f;font-size:10px;letter-spacing:2px;padding:28px 10px;border-top:1px solid #ffffff12}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#292116;border:1px solid #9b7c46;color:#f4dfb3;padding:12px 18px;border-radius:8px;font-size:12px;opacity:0;transition:.25s;z-index:10;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:760px){header{height:65px}nav{display:none}.brand{font-size:23px}.hero{padding:27px 0 22px}.hero h1{letter-spacing:4px}.grid{grid-template-columns:1fr}.floor{min-height:410px}.stage strong{font-size:14px}.zone{font-size:12px}.side{grid-template-columns:1fr}}
+@media(max-width:390px){.floor{min-height:350px;padding:10px}.panel-head{padding:14px}.legend{gap:10px}.zone{font-size:10px}.stage span{font-size:7px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">NOIR<small>THE NIGHT IS YOURS</small></div>
+  <nav><a href="#floor">KHÔNG GIAN</a><a href="#menu">MENU</a><a href="#chat">TRÒ CHUYỆN</a></nav>
+  <div class="status"><i></i> OPEN TONIGHT</div>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">A private nightlife experience</div>
+    <h1>WELCOME TO NOIR</h1>
+    <p>ÂM NHẠC · ÁNH SÁNG · KẾT NỐI</p>
+  </section>
+  <div class="grid">
+    <section class="panel" id="floor">
+      <div class="panel-head"><h2>Sơ đồ không gian</h2><span class="sub">TOP-DOWN VIEW · CONCEPT</span></div>
+      <div class="floor-wrap">
+        <div class="floor">
+          <div class="zone stage"><strong>NOIR DJ</strong><span>LIVE MUSIC STAGE</span></div>
+          <div class="zone bar">✦ THE GOLD BAR</div>
+          <div class="zone vip">VIP LOUNGE<small>PRIVATE AREA</small></div>
+          <div class="zone dance">DANCE FLOOR<small>FEEL THE BEAT</small></div>
+          <div class="zone lounge">LOUNGE<small>CHILL & CONNECT</small></div>
+          <div class="zone entry">ENTRANCE</div>
+          <i class="seat s1"></i><i class="seat s2"></i><i class="seat s3"></i><i class="seat s4"></i><i class="seat s5"></i><i class="seat s6"></i>
+        </div>
+      </div>
+      <div class="legend"><span><i class="dot"></i>Khu vực khách</span><span>✦ Khu DJ & quầy bar</span><span>● Vị trí khách (minh họa)</span></div>
+    </section>
+    <aside class="side">
+      <section class="panel" id="menu">
+        <div class="panel-head"><h2>Signature Menu</h2><span class="sub">DRINKS</span></div>
+        <div class="menu-list">
+          <div class="drink"><div><b>Noir Velvet</b><small>Hương vị đêm huyền bí</small></div><span class="price">129K</span></div>
+          <div class="drink"><div><b>Golden Hour</b><small>Thanh nhẹ, êm dịu</small></div><span class="price">119K</span></div>
+          <div class="drink"><div><b>Midnight Blue</b><small>Đậm cá tính, cuốn hút</small></div><span class="price">139K</span></div>
+          <div class="drink"><div><b>Classic Mocktail</b><small>Lựa chọn không cồn</small></div><span class="price">89K</span></div>
+        </div>
+        <div class="menu-foot"><button class="action" onclick="toast('Đây là menu demo. Chức năng gọi món sẽ được kết nối sau.')">KHÁM PHÁ / GỌI MÓN</button></div>
+      </section>
+      <section class="panel" id="chat">
+        <div class="panel-head"><h2>NOIR Social</h2><span class="sub">LOCAL DEMO CHAT</span></div>
+        <div class="chat">
+          <div class="messages" id="messages">
+            <div class="msg"><b>NOIR BOT</b> — Chào mừng bạn đến với NOIR BAR.</div>
+            <div class="msg"><b>NOIR BOT</b> — Hãy để lại lời chào của bạn!</div>
+          </div>
+          <form class="chat-form" onsubmit="sendMessage(event)"><input id="chatInput" maxlength="120" placeholder="Viết lời nhắn..." autocomplete="off"><button class="action" type="submit">GỬI</button></form>
+        </div>
+      </section>
+    </aside>
+  </div>
+</main>
+<footer>NOIR BAR · DESIGNED FOR THE NIGHT · 2026</footer>
+<div class="toast" id="toast"></div>
+<script>
+function toast(text){const el=document.getElementById('toast');el.textContent=text;el.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove('show'),3000)}
+function sendMessage(e){e.preventDefault();const input=document.getElementById('chatInput');const value=input.value.trim();if(!value)return;const msg=document.createElement('div');msg.className='msg';const b=document.createElement('b');b.textContent='BẠN';msg.append(b,document.createTextNode(' — '+value));const box=document.getElementById('messages');box.appendChild(msg);box.scrollTop=box.scrollHeight;input.value=''}
+</script>
+</body>
+</html>'''
+path = Path("/mnt/data/index.html")
+path.write_text(html, encoding="utf-8")
+print(f"Đã tạo: {path} ({path.stat().st_size:,} bytes)")
+Đã tạo: /mnt/data/index.html (9,627 bytes)
+Xong! Đây là file index.html của NOIR BAR.
+
+index.html
+
+Giao diện Luxury đen – vàng, tương thích máy tính và điện thoại.
+Đã tạo
+ TẢI FILE INDEX.HTML
+
+Đưa lên GitHub:
+
+Vào repository sonha93/noir-bar.
+
+Bấm uploading an existing file.
+
+Chọn file index.html vừa tải.
+
+Bấm Commit changes.
+
+Lưu ý: Đây là bản giao diện demo; chat hiện chưa hoạt động giữa nhiều người.
+
+
+index.html
+HTML
+Nếu cần dựng giao diện nhanh, có thể cân nhắc gói thiết kế website trọn gói.
+
+
+
+
+
+
