@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -51,80 +52,611 @@ main{max-width:1440px;margin:auto;padding:0 clamp(16px,4vw,58px)}
 .menu-list{padding:5px 18px 16px}.menu-item{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid #ffffff12}.menu-item:last-child{border:0}.menu-item strong{font:15px 'Playfair Display';font-weight:400}.menu-item small{display:block;font-size:9px;color:#8d877c;margin-top:5px}.menu-price{color:var(--gold-light);font-size:12px;white-space:nowrap}.add{margin-left:8px;background:transparent;border:1px solid #8d7040;color:#efd9a8;width:25px;height:25px}
 .cart-summary{padding:0 18px 17px;color:#b8aa8c;font-size:11px;display:flex;justify-content:space-between;align-items:center}.cart-summary b{color:var(--gold2)}
 .chat-wrap{padding:15px}.messages{height:140px;overflow:auto;display:flex;flex-direction:column;gap:9px}.message{font-size:11px;color:#c4bdae;line-height:1.5}.message b{color:var(--gold);font-weight:500}.chat-form{display:flex;gap:7px;margin-top:12px}.chat-form input{flex:1;min-width:0;background:#090909;border:1px solid #3c3528;color:white;padding:11px;font-size:11px;outline:none}.chat-form input:focus{border-color:var(--gold)}
-.bottom-info{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 55px}.info{padding:17px;border:1px solid #29251e;background:#10100f}.info b{display:block;font:16px 'Playfair Display';font-weight:400;color:#e4cc98}.info span{display:block;color:#898378;font-size:9px;margin-top:6px;letter-spacing:.7px}
-footer{border-top:1px solid #ffffff12;text-align:center;padding:25px 12px;color:#6e685e;font-size:9px;letter-spacing:2px}
-.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;transition:.25s;z-index:50;padding:12px 18px;background:#d6b36a;color:#17120a;font-size:12px;box-shadow:0 8px 25px #0009;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
-.modal{position:fixed;inset:0;background:#000b;z-index:40;display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modal-card{width:min(420px,100%);background:#14120e;border:1px solid #8e7040;padding:23px}.modal-card h3{font:23px 'Playfair Display';font-weight:400;margin:0 0 12px;color:var(--gold2)}.modal-card p{font-size:12px;color:#b8b0a2;line-height:1.6}.modal-actions{display:flex;gap:9px;margin-top:18px;justify-content:flex-end}
-@media(max-width:900px){.workspace{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr 1fr}.sidebar>.panel:last-child{grid-column:1/-1}.hero-stats{display:none}}
-@media(max-width:620px){header{height:65px;padding:0 15px}nav{display:none}.logo{font-size:22px}.header-right{gap:8px}.live{font-size:8px}.header-right .btn{padding:9px 10px;font-size:9px}main{padding:0 12px}.hero{min-height:245px;padding:38px 0 30px}.hero h1{font-size:49px;letter-spacing:0}.hero p{font-size:11px}.section-title{margin-top:25px}.section-title h2{font-size:22px}.section-title p{font-size:8px}.floor-shell{padding:8px}.floorplan{min-height:360px;aspect-ratio:1/1}.room{font-size:9px}.room small{font-size:7px}.djbooth b{font-size:15px}.table{width:43px;height:43px;font-size:8px}.table:after{inset:5px}.t5{width:37px;height:37px}.sidebar{grid-template-columns:1fr}.sidebar>.panel:last-child{grid-column:auto}.controls{gap:6px;padding:10px}.control{padding:9px 10px;font-size:8px}.volume{width:100%;margin:3px 0 0}.volume input{flex:1}.bottom-info{grid-template-columns:1fr;gap:8px;margin-bottom:35px}.info{padding:13px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+.bottom-info{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 34px}.info{padding:16px;border:1px solid #ffffff12;background:#10100e}.info b{display:block;font:15px 'Playfair Display';font-weight:400;color:#d8c69e}.info span{display:block;font-size:9px;color:#817b70;letter-spacing:1px;margin-top:7px}
+footer{text-align:center;padding:28px 15px 35px;border-top:1px solid #ffffff12;color:#777064;font-size:9px;letter-spacing:2px;line-height:1.7}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:60;background:#d8b56d;color:#17130c;padding:13px 20px;font-size:11px;box-shadow:0 10px 35px #0009;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal{position:fixed;inset:0;background:#000c;z-index:50;display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modal-card{width:min(420px,100%);padding:25px;background:#15130f;border:1px solid #9a7840;box-shadow:0 20px 80px #000}.modal-card h3{font:25px 'Playfair Display';font-weight:400;color:var(--gold2);margin:0 0 8px}.modal-card p{color:#aaa18e;font-size:12px;line-height:1.6}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}
+.entry-screen{position:fixed;inset:0;z-index:100;background:radial-gradient(ellipse at 50% 40%,#382819 0%,#100e0b 38%,#050505 78%);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;transition:opacity .8s,visibility .8s}
+.entry-screen.hide{opacity:0;visibility:hidden;pointer-events:none}
+.entry-content{max-width:700px}.entry-kicker{color:#c6a66a;font-size:10px;letter-spacing:7px}.entry-title{font:400 clamp(65px,13vw,125px)/1 'Playfair Display',serif;letter-spacing:12px;color:#ead5a5;margin:25px 0;text-shadow:0 0 35px #c99b4b55}.entry-sub{color:#aaa18e;font-size:11px;letter-spacing:4px;margin-bottom:42px}.enter-button{padding:17px 42px;background:linear-gradient(135deg,#e2c27f,#a77c3c);border:1px solid #f1dcae;color:#161108;font-size:11px;letter-spacing:4px;font-weight:700;box-shadow:0 0 35px #d8b56d33;transition:.3s}.enter-button:hover{transform:translateY(-3px);box-shadow:0 0 55px #d8b56d77}
+body.not-entered{overflow:hidden}
+@media(max-width:950px){.workspace{grid-template-columns:1fr}.sidebar{grid-template-columns:repeat(2,minmax(0,1fr))}.sidebar #lounge{grid-column:1/-1}.hero-stats{display:none}}
+@media(max-width:600px){header{height:65px}nav{display:none}.logo{font-size:21px}.live{display:none}.hero{min-height:240px;padding:35px 0}.hero h1{font-size:54px}.section-title p{display:none}.floor-shell{padding:8px}.floorplan{min-height:390px;aspect-ratio:.9/1}.room{font-size:9px;letter-spacing:.5px}.room small{font-size:7px}.djbooth b{font-size:15px}.bar{left:5%;width:90%}.dance{left:29%;width:42%;height:33%}.vip,.lounge{width:21%;height:25%}.table{width:44px;height:44px;font-size:8px}.t5{width:38px;height:38px}.controls{padding:10px}.control{padding:9px 10px;font-size:8px}.volume{margin-left:0;width:100%;justify-content:flex-end}.sidebar{grid-template-columns:1fr}.sidebar #lounge{grid-column:auto}.bottom-info{grid-template-columns:1fr}.cart-summary{flex-wrap:wrap;gap:10px}.entry-title{letter-spacing:7px}.entry-sub{letter-spacing:2px}}
 </style>
 </head>
-<body>
+<body class="not-entered">
 <div class="ambient"></div>
-<header>
- <div class="logo">NOIR<span>VIRTUAL NIGHTCLUB</span></div>
- <nav><a href="#space">KHÔNG GIAN</a><a href="#music">ÂM NHẠC</a><a href="#menu">MENU</a><a href="#lounge">LOUNGE</a></nav>
- <div class="header-right"><span class="live">OPEN NOW</span><button class="btn" onclick="openBooking()">ĐẶT BÀN</button></div>
-</header>
-<main>
- <section class="hero"><div class="hero-copy"><div class="kicker">Welcome to a different kind of night</div><h1>ENTER THE <em>NOIR.</em></h1><p>Không gian đêm được tái hiện trong thế giới trực tuyến. Dạo quanh sàn bar, khám phá khu VIP, thưởng thức âm nhạc và kết nối cùng mọi người.</p></div>
- <div class="hero-stats"><div class="stat"><strong id="guestCount">128</strong><span>GUESTS ONLINE*</span></div><div class="stat"><strong>04</strong><span>VIP TABLES</span></div><div class="stat"><strong>24/7</strong><span>VIRTUAL</span></div></div></section>
- <div class="section-title" id="space"><h2>Explore the venue</h2><p>01 / THE FLOOR PLAN</p></div>
- <section class="workspace">
-  <div class="panel">
-   <div class="panel-head"><h3>NOIR — Main Floor</h3><small>TOP VIEW · INTERACTIVE</small></div>
-   <div class="floor-shell"><div class="floorplan lights-on" id="floor">
-    <div class="beam a"></div><div class="beam b"></div>
-    <div class="room djbooth"><b>NOIR</b><small>DJ BOOTH · LIVE SET</small></div><div class="room bar">✦ &nbsp; THE GOLD BAR <small>COCKTAIL · SERVICE</small></div>
-    <div class="room vip">VIP LOUNGE<small>PRIVATE TABLES</small></div><div class="room dance" id="danceFloor">DANCE FLOOR<small>FEEL THE MUSIC</small></div><div class="room lounge">LOUNGE<small>CHILL ZONE</small></div><div class="room entry">ENTRANCE</div>
-    <button class="table t1" onclick="selectTable('T-01',this)">T-01</button><button class="table t2" onclick="selectTable('T-02',this)">T-02</button><button class="table t3" onclick="selectTable('T-03',this)">T-03</button><button class="table t4" onclick="selectTable('T-04',this)">T-04</button><button class="table t5" onclick="selectTable('VIP',this)">VIP</button>
-    <i class="person" style="left:27%;top:53%"></i><i class="person" style="right:27%;top:56%;animation-delay:.4s"></i><i class="person" style="left:48%;top:70%;animation-delay:.8s"></i><i class="person" style="right:34%;bottom:19%;animation-delay:1.2s"></i>
-   </div><div class="floor-caption"><span><i></i>Guest activity · hiệu ứng minh họa</span><span>◉ Bấm vào bàn để chọn</span><span>✦ Khu DJ & quầy bar</span></div></div>
-   <div class="controls">
-    <button class="control" id="playBtn" onclick="toggleMusic()">▶ PLAY MUSIC</button>
-    <button class="control active" id="lightBtn" onclick="toggleLights()">✦ LIGHTS ON</button>
-    <button class="control" id="strobeBtn" onclick="toggleStrobe()">⚡ STROBE</button>
-    <button class="control" id="danceBtn" onclick="toggleDance()">◈ DANCE MODE</button>
-    <label class="volume">VOLUME <input id="volume" type="range" min="0" max="100" value="35" oninput="setVolume(this.value)"></label>
-   </div>
+
+<div class="entry-screen" id="entryScreen">
+  <div class="entry-content">
+    <div class="entry-kicker">WELCOME TO THE NIGHT</div>
+    <div class="entry-title">NOIR</div>
+    <div class="entry-sub">PRIVATE VIRTUAL NIGHTCLUB</div>
+    <button class="enter-button" id="enterButton">ENTER THE BAR</button>
   </div>
-  <aside class="sidebar">
-   <section class="panel" id="music"><div class="panel-head"><h3>Tonight's sound</h3><small id="musicState">READY TO PLAY</small></div><div class="dj-card"><div class="record" id="record">♫</div><div class="dj-copy"><strong>Midnight Frequencies</strong><span>NOIR RESIDENT · ORIGINAL SYNTH SET</span></div></div><div style="padding:0 18px 18px"><div class="wave" id="wave"><span></span></div><div class="track-meta"><span id="elapsed">00:00</span><span>LIVE LOOP</span></div><p style="font-size:9px;color:#827b70;line-height:1.5">Nhạc điện tử tổng hợp ngay trong trình duyệt. Nhấn Play để bắt đầu âm thanh.</p></div></section>
-   <section class="panel" id="menu"><div class="panel-head"><h3>Signature menu</h3><small>ORDER DEMO</small></div><div class="menu-list">
-    <div class="menu-item"><div><strong>Noir Velvet</strong><small>Rich · Smooth · Signature</small></div><span class="menu-price">129.000đ <button class="add" onclick="addToCart('Noir Velvet',129000)">+</button></span></div>
-    <div class="menu-item"><div><strong>Golden Hour</strong><small>Citrus · Sparkling · Fresh</small></div><span class="menu-price">119.000đ <button class="add" onclick="addToCart('Golden Hour',119000)">+</button></span></div>
-    <div class="menu-item"><div><strong>Midnight Blue</strong><small>Bold · Mysterious</small></div><span class="menu-price">139.000đ <button class="add" onclick="addToCart('Midnight Blue',139000)">+</button></span></div>
-    <div class="menu-item"><div><strong>Noir Mocktail</strong><small>Non-alcoholic · Refreshing</small></div><span class="menu-price">89.000đ <button class="add" onclick="addToCart('Noir Mocktail',89000)">+</button></span></div>
-   </div><div class="cart-summary"><span id="cartText">0 món trong giỏ</span><b id="cartTotal">0đ</b><button class="btn btn-outline" onclick="checkout()">XÁC NHẬN</button></div></section>
-   <section class="panel" id="lounge"><div class="panel-head"><h3>Social lounge</h3><small>LOCAL PREVIEW</small></div><div class="chat-wrap"><div class="messages" id="messages"><div class="message"><b>NOIR HOST</b> — Chào mừng bạn đến với NOIR.</div><div class="message"><b>NOIR HOST</b> — Hãy gửi lời chào tại đây.</div></div><form class="chat-form" onsubmit="sendChat(event)"><input id="chatInput" maxlength="140" placeholder="Nhập tin nhắn..." autocomplete="off"><button class="btn" type="submit">GỬI</button></form></div></section>
-  </aside>
- </section>
- <div class="bottom-info"><div class="info"><b>Luxury atmosphere</b><span>BLACK & GOLD · PREMIUM NIGHT</span></div><div class="info"><b>Immersive floor plan</b><span>TOP-DOWN INTERACTIVE CONCEPT</span></div><div class="info"><b>Built for every screen</b><span>DESKTOP · TABLET · MOBILE</span></div></div>
+</div>
+
+<header>
+  <div class="logo">NOIR<span>VIRTUAL BAR</span></div>
+  <nav>
+    <a href="#floor">THE FLOOR</a>
+    <a href="#music">MUSIC</a>
+    <a href="#menu">DRINKS</a>
+    <a href="#lounge">LOUNGE</a>
+  </nav>
+  <div class="header-right">
+    <span class="live">NIGHT SESSION</span>
+    <button class="btn btn-outline" onclick="showToast('WELCOME TO NOIR BAR')">WELCOME</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="kicker">AN EXCLUSIVE NIGHT EXPERIENCE</div>
+      <h1>ENTER THE <em>NOIR.</em></h1>
+      <p>Where the night comes alive. Enjoy music, premium drinks, private tables and an unforgettable virtual nightlife experience.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>24/7</strong><span>OPEN HOURS</span></div>
+      <div class="stat"><strong>01</strong><span>PRIVATE CLUB</span></div>
+    </div>
+  </section>
+
+  <section id="floor">
+    <div class="section-title">
+      <h2>The Floor</h2>
+      <p>SELECT A TABLE TO RESERVE</p>
+    </div>
+
+    <div class="workspace">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>NOIR — Main Hall</h3>
+          <small>TOP VIEW / FLOOR 01</small>
+        </div>
+
+        <div class="floor-shell">
+          <div class="floorplan lights-on" id="floorplan">
+
+            <div class="beam a"></div>
+            <div class="beam b"></div>
+
+            <div class="room djbooth">
+              <b>NOIR DJ</b>
+              <small>DJ BOOTH</small>
+            </div>
+
+            <div class="room bar">
+              <span>GOLDEN BAR</span>
+              <small>PREMIUM DRINKS · COCKTAILS</small>
+            </div>
+
+            <div class="room vip">
+              <span>VIP LOUNGE</span>
+              <small>PRIVATE AREA</small>
+            </div>
+
+            <div class="room lounge">
+              <span>LOUNGE</span>
+              <small>CHILL & RELAX</small>
+            </div>
+
+            <div class="room dance" id="danceFloor">
+              <span>THE DANCE FLOOR</span>
+              <small>FEEL THE MUSIC</small>
+            </div>
+
+            <div class="room entry">
+              <span>ENTRANCE</span>
+            </div>
+
+            <button class="table t1" data-table="T-01">T-01</button>
+            <button class="table t2" data-table="T-02">T-02</button>
+            <button class="table t3" data-table="T-03">T-03</button>
+            <button class="table t4" data-table="T-04">T-04</button>
+            <button class="table t5" data-table="VIP">VIP</button>
+
+            <span class="person" style="left:36%;top:58%"></span>
+            <span class="person" style="left:61%;top:65%;animation-delay:.4s"></span>
+            <span class="person" style="left:45%;top:73%;animation-delay:.8s"></span>
+            <span class="person" style="left:53%;top:54%;animation-delay:1.2s"></span>
+            <span class="person" style="left:23%;top:37%;animation-delay:.6s"></span>
+            <span class="person" style="left:77%;top:37%;animation-delay:1s"></span>
+
+          </div>
+
+          <div class="floor-caption">
+            <span><i></i> AVAILABLE</span>
+            <span style="color:#d58c7d">● BOOKED</span>
+            <span style="color:#d7b56d">● SELECT TABLE</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="control" id="lightsBtn">✦ LIGHTS ON</button>
+          <button class="control" id="strobeBtn">✧ STROBE</button>
+          <button class="control" id="danceBtn">♫ DANCE MODE</button>
+          <div class="volume">
+            <span>VOLUME</span>
+            <input id="volume" type="range" min="0" max="100" value="35">
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+
+        <div class="panel" id="music">
+          <div class="panel-head">
+            <h3>Now Playing</h3>
+            <small>NOIR RADIO</small>
+          </div>
+          <div class="dj-card">
+            <div class="record" id="record">♫</div>
+            <div class="dj-copy">
+              <strong>Midnight Vibes</strong>
+              <span>DEEP HOUSE · ELECTRONIC</span>
+            </div>
+          </div>
+          <div style="padding:0 18px 16px">
+            <div class="wave" id="wave"><span></span></div>
+            <div class="track-meta">
+              <span id="musicStatus">READY TO PLAY</span>
+              <span>NOIR DJ SET</span>
+            </div>
+            <button class="btn" id="playBtn" style="width:100%;margin-top:16px">▶ PLAY MUSIC</button>
+          </div>
+        </div>
+
+        <div class="panel" id="menu">
+          <div class="panel-head">
+            <h3>Drinks Menu</h3>
+            <small>NOIR SELECTION</small>
+          </div>
+
+          <div class="menu-list">
+
+            <div class="menu-item">
+              <div>
+                <strong>Midnight Martini</strong>
+                <small>Classic signature cocktail</small>
+              </div>
+              <div class="menu-price">
+                180K
+                <button class="add" data-name="Midnight Martini" data-price="180000">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <strong>Golden Sunrise</strong>
+                <small>Orange · Tropical · Fresh</small>
+              </div>
+              <div class="menu-price">
+                150K
+                <button class="add" data-name="Golden Sunrise" data-price="150000">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <strong>Blue Night</strong>
+                <small>Blue citrus signature</small>
+              </div>
+              <div class="menu-price">
+                160K
+                <button class="add" data-name="Blue Night" data-price="160000">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <strong>Premium Water</strong>
+                <small>Mineral water</small>
+              </div>
+              <div class="menu-price">
+                40K
+                <button class="add" data-name="Premium Water" data-price="40000">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <div>
+                <strong>Fresh Juice</strong>
+                <small>Fresh fruit selection</small>
+              </div>
+              <div class="menu-price">
+                80K
+                <button class="add" data-name="Fresh Juice" data-price="80000">+</button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="cart-summary">
+            <span>YOUR ORDER: <b id="cartCount">0 ITEMS</b></span>
+            <b id="cartTotal">0 VND</b>
+            <button class="btn btn-outline" id="checkoutBtn">CHECKOUT</button>
+          </div>
+        </div>
+
+        <div class="panel" id="lounge">
+          <div class="panel-head">
+            <h3>NOIR Lounge Chat</h3>
+            <small>LOCAL DEMO</small>
+          </div>
+          <div class="chat-wrap">
+            <div class="messages" id="messages">
+              <div class="message"><b>NOIR BOT:</b> Welcome to NOIR. Enjoy your night.</div>
+              <div class="message"><b>NOIR BOT:</b> Select a table or order a drink.</div>
+            </div>
+            <form class="chat-form" id="chatForm">
+              <input id="chatInput" placeholder="Say something..." maxlength="180" autocomplete="off">
+              <button class="btn" type="submit">SEND</button>
+            </form>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <section class="bottom-info">
+    <div class="info">
+      <b>Premium Atmosphere</b>
+      <span>LIGHTS · MUSIC · NIGHTLIFE</span>
+    </div>
+    <div class="info">
+      <b>Private Tables</b>
+      <span>SELECT YOUR OWN SPACE</span>
+    </div>
+    <div class="info">
+      <b>Golden Bar</b>
+      <span>DRINKS · COCKTAILS · LOUNGE</span>
+    </div>
+  </section>
 </main>
-<footer>NOIR VIRTUAL NIGHTCLUB · THE NIGHT IS YOURS · 2026<br><br>*Lượng khách hiển thị là con số minh họa, chưa phải người dùng trực tuyến thật.</footer>
+
+<footer>
+  NOIR BAR · PRIVATE VIRTUAL NIGHTCLUB<br>
+  THE NIGHT IS YOURS.
+</footer>
+
 <div class="toast" id="toast"></div>
-<div class="modal" id="bookingModal"><div class="modal-card"><h3>Reserve your table</h3><p id="bookingText">Chọn một bàn trên sơ đồ để đặt bàn.</p><label style="display:block;color:#a99c80;font-size:10px;margin:12px 0 6px">TÊN CỦA BẠN</label><input id="guestName" placeholder="Nhập tên" style="width:100%;padding:11px;background:#090909;border:1px solid #51432b;color:white"><div class="modal-actions"><button class="control" onclick="closeBooking()">ĐÓNG</button><button class="btn" onclick="confirmBooking()">XÁC NHẬN ĐẶT BÀN</button></div></div></div>
+
+<div class="modal" id="bookingModal">
+  <div class="modal-card">
+    <h3>Reserve Your Table</h3>
+    <p id="bookingText">Choose your table at NOIR.</p>
+    <input id="guestName" placeholder="Your name" maxlength="50"
+      style="width:100%;padding:13px;background:#090909;color:white;border:1px solid #55452c;outline:none">
+    <div class="modal-actions">
+      <button class="btn btn-outline" id="cancelBooking">CANCEL</button>
+      <button class="btn" id="confirmBooking">CONFIRM</button>
+    </div>
+  </div>
+</div>
+
 <script>
-let audioCtx=null,master=null,playing=false,lights=true,strobe=false,dancing=false,selectedTable=null,cart=[],musicTimer=null,elapsed=0;
-function notify(message){const t=document.getElementById('toast');t.textContent=message;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),3000)}
-function initAudio(){const AC=window.AudioContext||window.webkitAudioContext;if(!AC){notify('Trình duyệt này không hỗ trợ Web Audio.');return false}if(!audioCtx){audioCtx=new AC();master=audioCtx.createGain();master.gain.value=.35;master.connect(audioCtx.destination)}if(audioCtx.state==='suspended')audioCtx.resume();return true}
-function tone(freq,start,duration,type='sine',gain=.08){const osc=audioCtx.createOscillator(),amp=audioCtx.createGain();osc.type=type;osc.frequency.setValueAtTime(freq,start);amp.gain.setValueAtTime(.0001,start);amp.gain.exponentialRampToValueAtTime(gain,start+.015);amp.gain.exponentialRampToValueAtTime(.0001,start+duration);osc.connect(amp);amp.connect(master);osc.start(start);osc.stop(start+duration+.03)}
-function kick(start){const osc=audioCtx.createOscillator(),amp=audioCtx.createGain();osc.type='sine';osc.frequency.setValueAtTime(120,start);osc.frequency.exponentialRampToValueAtTime(42,start+.16);amp.gain.setValueAtTime(.28,start);amp.gain.exponentialRampToValueAtTime(.001,start+.2);osc.connect(amp);amp.connect(master);osc.start(start);osc.stop(start+.21)}
-function makeBeat(){if(!playing||!audioCtx)return;const now=audioCtx.currentTime;for(let i=0;i<4;i++){const t=now+i*.5;kick(t);if(i%2===1)tone(1800,t,.045,'triangle',.025);tone([110,130.81,164.81,146.83][i],t+.02,.28,'triangle',.035);tone([440,523.25,659.25,587.33][i],t+.25,.16,'sine',.018)}}
-function toggleMusic(){if(playing){stopMusic();return}if(!initAudio())return;playing=true;document.getElementById('playBtn').textContent='Ⅱ PAUSE MUSIC';document.getElementById('playBtn').classList.add('active');document.getElementById('record').classList.add('playing');document.getElementById('wave').classList.add('playing');document.getElementById('musicState').textContent='PLAYING · SYNTH SET';makeBeat();musicTimer=setInterval(()=>{makeBeat();elapsed+=2;document.getElementById('elapsed').textContent='00:'+String(elapsed%60).padStart(2,'0')},2000);notify('Đang phát nhạc điện tử NOIR.')}
-function stopMusic(){playing=false;clearInterval(musicTimer);document.getElementById('playBtn').textContent='▶ PLAY MUSIC';document.getElementById('playBtn').classList.remove('active');document.getElementById('record').classList.remove('playing');document.getElementById('wave').classList.remove('playing');document.getElementById('musicState').textContent='PAUSED';notify('Đã tạm dừng nhạc.')}
-function setVolume(v){if(master)master.gain.setTargetAtTime(v/100,audioCtx.currentTime,.04)}
-function toggleLights(){lights=!lights;const f=document.getElementById('floor');f.classList.toggle('lights-off',!lights);f.classList.toggle('lights-on',lights);document.getElementById('lightBtn').textContent=lights?'✦ LIGHTS ON':'✧ LIGHTS OFF';document.getElementById('lightBtn').classList.toggle('active',lights);notify(lights?'Đã bật đèn sân khấu.':'Đã tắt đèn sân khấu.')}
-function toggleStrobe(){strobe=!strobe;document.getElementById('floor').classList.toggle('strobe',strobe);document.getElementById('strobeBtn').classList.toggle('active',strobe);notify(strobe?'Đã bật hiệu ứng đèn nháy.':'Đã tắt đèn nháy.')}
-function toggleDance(){dancing=!dancing;document.getElementById('danceFloor').classList.toggle('active',dancing);document.getElementById('floor').classList.toggle('dance-mode',dancing);document.getElementById('danceBtn').classList.toggle('active',dancing);notify(dancing?'Dance mode đã bật!':'Đã tắt dance mode.')}
-function selectTable(name,el){document.querySelectorAll('.table').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');selectedTable={name,el};openBooking()}
-function openBooking(){document.getElementById('bookingText').textContent=selectedTable?'Bạn đang chọn bàn '+selectedTable.name+'. Nhập tên để xác nhận đặt bàn demo.':'Chọn bàn trên sơ đồ hoặc chọn bàn sau khi mở cửa sổ này.';document.getElementById('bookingModal').classList.add('open')}
-function closeBooking(){document.getElementById('bookingModal').classList.remove('open')}
-function confirmBooking(){if(!selectedTable){notify('Hãy bấm chọn một bàn trên sơ đồ trước.');return}const name=document.getElementById('guestName').value.trim();if(!name){notify('Vui lòng nhập tên của bạn.');return}selectedTable.el.classList.add('booked');selectedTable.el.classList.remove('selected');notify('Đã ghi nhận đặt bàn '+selectedTable.name+' cho '+name+' (demo).');selectedTable=null;document.getElementById('guestName').value='';closeBooking()}
-function addToCart(name,price){cart.push({name,price});renderCart();notify('Đã thêm '+name+' vào giỏ.')}
-function renderCart(){document.getElementById('cartText').textContent=cart.length+' món trong giỏ';document.getElementById('cartTotal').textContent=cart.reduce((s,x)=>s+x.price,0).toLocaleString('vi-VN')+'đ'}
-function checkout(){if(!cart.length){notify('Giỏ hàng đang trống.');return}const total=cart.reduce((s,x)=>s+x.price,0);notify('Đơn demo: '+cart.length+' món · '+total.toLocaleString('vi-VN')+'đ. Chưa gửi đến quán.');}
-function sendChat(event){event.preventDefault();const input=document.getElementById('chatInput'),value=input.value.trim();if(!value)return;const row=document.createElement('div');row.className='message';const name=document.createElement('b');name.textContent='BẠN';row.append(name,document.createTextNode(' — '+value));const box=document.getElementById('messages');box.appendChild(row);box.scrollTop=box.scrollHeight;input.value=''}
+ const $ = id => document.getElementById(id);
+
+let selectedTable = null;
+let bookedTables = {};
+let cart = [];
+let audioContext = null;
+let masterGain = null;
+let oscillator = null;
+let musicPlaying = false;
+let musicTimer = null;
+let toastTimer = null;
+
+function showToast(message) {
+  const toast = $("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
+}
+
+/* ENTER THE BAR */
+$("enterButton").addEventListener("click", () => {
+  $("entryScreen").classList.add("hide");
+  document.body.classList.remove("not-entered");
+  showToast("WELCOME TO NOIR BAR");
+});
+
+/* TABLE SELECTION */
+document.querySelectorAll(".table").forEach(table => {
+  table.addEventListener("click", () => {
+    const id = table.dataset.table;
+
+    if (bookedTables[id]) {
+      showToast("THIS TABLE IS ALREADY BOOKED");
+      return;
+    }
+
+    selectedTable = id;
+    $("bookingText").textContent =
+      "You selected table " + id + ". Enter your name to reserve.";
+
+    $("guestName").value = "";
+    $("bookingModal").classList.add("open");
+    $("guestName").focus();
+  });
+});
+
+$("cancelBooking").addEventListener("click", () => {
+  $("bookingModal").classList.remove("open");
+  selectedTable = null;
+});
+
+$("confirmBooking").addEventListener("click", () => {
+  const name = $("guestName").value.trim();
+
+  if (!name) {
+    showToast("PLEASE ENTER YOUR NAME");
+    $("guestName").focus();
+    return;
+  }
+
+  if (!selectedTable || bookedTables[selectedTable]) {
+    showToast("TABLE IS NOT AVAILABLE");
+    $("bookingModal").classList.remove("open");
+    return;
+  }
+
+  bookedTables[selectedTable] = name;
+
+  const table = document.querySelector(
+    '.table[data-table="' + selectedTable + '"]'
+  );
+
+  if (table) {
+    table.classList.add("booked");
+    table.textContent = "BOOKED";
+    table.title = "Reserved by " + name;
+  }
+
+  $("bookingModal").classList.remove("open");
+  showToast("TABLE " + selectedTable + " RESERVED");
+  selectedTable = null;
+});
+
+/* LIGHTS */
+$("lightsBtn").addEventListener("click", () => {
+  const floor = $("floorplan");
+  const off = floor.classList.toggle("lights-off");
+
+  $("lightsBtn").textContent = off ? "✦ LIGHTS OFF" : "✦ LIGHTS ON";
+  $("lightsBtn").classList.toggle("active", off);
+});
+
+/* STROBE */
+$("strobeBtn").addEventListener("click", () => {
+  const floor = $("floorplan");
+  const active = floor.classList.toggle("strobe");
+
+  $("strobeBtn").classList.toggle("active", active);
+  $("strobeBtn").textContent = active ? "✧ STOP STROBE" : "✧ STROBE";
+});
+
+/* DANCE FLOOR */
+$("danceBtn").addEventListener("click", () => {
+  const floor = $("danceFloor");
+  const active = floor.classList.toggle("active");
+
+  $("danceBtn").classList.toggle("active", active);
+  $("danceBtn").textContent = active ? "♫ STOP DANCE" : "♫ DANCE MODE";
+});
+
+/* AUDIO ENGINE */
+function setupAudio() {
+  const AudioContextClass =
+    window.AudioContext || window.webkitAudioContext;
+
+  if (!AudioContextClass) {
+    showToast("YOUR BROWSER DOES NOT SUPPORT AUDIO");
+    return false;
+  }
+
+  if (!audioContext) {
+    audioContext = new AudioContextClass();
+    masterGain = audioContext.createGain();
+
+    masterGain.gain.value =
+      Number($("volume").value) / 100 * 0.12;
+
+    masterGain.connect(audioContext.destination);
+  }
+
+  return true;
+}
+
+function playNote(frequency, duration, type = "sine") {
+  if (!audioContext || !masterGain || !musicPlaying) return;
+
+  const osc = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+
+  osc.type = type;
+  osc.frequency.value = frequency;
+
+  gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+  gain.gain.exponentialRampToValueAtTime(
+    0.18,
+    audioContext.currentTime + 0.04
+  );
+  gain.gain.exponentialRampToValueAtTime(
+    0.0001,
+    audioContext.currentTime + duration
+  );
+
+  osc.connect(gain);
+  gain.connect(masterGain);
+
+  osc.start();
+  osc.stop(audioContext.currentTime + duration + 0.05);
+}
+
+function startMusic() {
+  if (!setupAudio()) return;
+
+  audioContext.resume();
+  musicPlaying = true;
+
+  const notes = [
+    110, 164.81, 220, 164.81,
+    130.81, 196, 261.63, 196,
+    98, 146.83, 196, 146.83,
+    123.47, 185, 246.94, 185
+  ];
+
+  let index = 0;
+
+  clearInterval(musicTimer);
+
+  musicTimer = setInterval(() => {
+    if (!musicPlaying) return;
+
+    const note = notes[index % notes.length];
+
+    playNote(note, 0.32, "sawtooth");
+
+    if (index % 4 === 0) {
+      playNote(note / 2, 0.5, "sine");
+    }
+
+    index++;
+  }, 350);
+
+  $("record").classList.add("playing");
+  $("wave").classList.add("playing");
+  $("musicStatus").textContent = "PLAYING";
+  $("playBtn").textContent = "Ⅱ PAUSE MUSIC";
+  showToast("NOIR MUSIC STARTED");
+}
+
+function stopMusic() {
+  musicPlaying = false;
+  clearInterval(musicTimer);
+
+  $("record").classList.remove("playing");
+  $("wave").classList.remove("playing");
+  $("musicStatus").textContent = "PAUSED";
+  $("playBtn").textContent = "▶ PLAY MUSIC";
+}
+
+$("playBtn").addEventListener("click", () => {
+  if (musicPlaying) {
+    stopMusic();
+  } else {
+    startMusic();
+  }
+});
+
+/* VOLUME */
+$("volume").addEventListener("input", event => {
+  if (masterGain && audioContext) {
+    masterGain.gain.setTargetAtTime(
+      Number(event.target.value) / 100 * 0.12,
+      audioContext.currentTime,
+      0.05
+    );
+  }
+});
+
+/* SHOPPING CART */
+function formatMoney(number) {
+  return new Intl.NumberFormat("vi-VN").format(number) + " VND";
+}
+
+document.querySelectorAll(".add").forEach(button => {
+  button.addEventListener("click", () => {
+    const name = button.dataset.name;
+    const price = Number(button.dataset.price);
+
+    cart.push({ name, price });
+
+    updateCart();
+    showToast(name + " ADDED TO ORDER");
+  });
+});
+
+function updateCart() {
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+  $("cartCount").textContent = cart.length + " ITEMS";
+  $("cartTotal").textContent = formatMoney(total);
+}
+
+$("checkoutBtn").addEventListener("click", () => {
+  if (cart.length === 0) {
+    showToast("YOUR ORDER IS EMPTY");
+    return;
+  }
+
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+  const summary = cart.map(item => item.name).join(", ");
+
+  showToast("ORDER DEMO: " + summary + " — " + formatMoney(total));
+
+  cart = [];
+  updateCart();
+});
+
+/* CHAT */
+$("chatForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const input = $("chatInput");
+  const message = input.value.trim();
+
+  if (!message) return;
+
+  const box = document.createElement("div");
+  box.className = "message";
+
+  const name = document.createElement("b");
+  name.textContent = "YOU: ";
+
+  box.appendChild(name);
+  box.appendChild(document.createTextNode(message));
+
+  $("messages").appendChild(box);
+
+  input.value = "";
+
+  const messages = $("messages");
+  messages.scrollTop = messages.scrollHeight;
+});
+
+/* RANDOM AMBIENT LIGHT */
+const people = document.querySelectorAll(".person");
+
+people.forEach((person, index) => {
+  person.style.animationDelay = (index * 0.3) + "s";
+});
+
+/* CLOSE MODAL WHEN CLICKING OUTSIDE */
+$("bookingModal").addEventListener("click", event => {
+  if (event.target === $("bookingModal")) {
+    $("bookingModal").classList.remove("open");
+    selectedTable = null;
+  }
+});
+
+/* KEYBOARD ESCAPE */
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    $("bookingModal").classList.remove("open");
+    selectedTable = null;
+  }
+});
+
+/* INITIALIZE */
+updateCart();
+
 </script>
 </body>
+</html>
